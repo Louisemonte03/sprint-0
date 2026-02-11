@@ -1,0 +1,277 @@
+/* =============
+    custom properties
+================ */
+
+:root {
+    --base-color: #ffffff;
+    --base-text-color: #000000;
+    --card-bg: #f5f5f7;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --size-extra-small:14px;
+    --size-small:20px;
+    --size-medium:35px;
+    --size-large:85px
+}
+
+body.dark-mode {
+    --base-color: #252525;
+    --base-text-color: #ffffff;
+    --card-bg: #1a1a1a;
+    --card-shadow: rgba(109, 109, 109, 0.1);
+}
+
+/* =============
+   STYLING PAGE
+================ */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--base-color);
+    color: var(--base-text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.7s ease;
+}
+
+
+/* ====================
+STYLING THEME SWITCHER
+======================= */
+
+.theme-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-switcher div {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    background: var(--card-bg);
+    padding: 10px 20px;
+    border-radius: 40px;
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-size: var(--size-medium);
+
+}
+
+.theme-btn:hover {
+    transform: scale(1.2);
+}
+
+
+@media(max-width: 768px){
+    .theme-switcher {
+         position: fixed;
+         z-index: 10;
+    }
+}
+
+
+/* =============
+STYLING HEADER
+=============== */
+
+header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center; 
+    align-items: center;   
+    padding: 100px 0 100px 0;   
+}
+
+header img {
+    width: 300px;
+    height: auto;
+}
+
+header h1 {
+   font-size: var(--size-large);
+}
+
+header p {
+   font-size: var(--size-small);
+}
+
+header img:nth-of-type(1){
+    margin-top: 50px;
+}
+
+/* ===============
+INTRODUCE WHO AM I
+================== */
+
+.introduce img {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+
+.introduce-elements img {
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+.introduce-elements {
+    display: flex;
+    gap: 50px;
+}
+
+.introduce:hover .introduce-elements img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.introduce:hover .hockey            { transition-delay: 0.1s; }
+.introduce:hover .bike              { transition-delay: 0.3s; }
+.introduce:hover .padel-racket      { transition-delay: 0.5s; }
+
+@media(max-width: 768px){
+    .introduce-elements {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+.introduce-elements img {
+    width: 200px;
+}
+}
+
+
+/* =============
+LEARNING OBJECTS
+================ */
+.cards {
+    padding-bottom: 100px; 
+}
+
+.cards ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    perspective: 800px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    /* ik weet niet wat dit doet */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-bg);
+    padding: 25px;
+    text-align: center;
+}
+
+.card-front img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-back h2 {
+    color: var(--third-color);
+    margin-bottom: 15px;
+}
+
+/* =============
+API STUDENTS
+================ */
+
+.students {
+    text-align: center;
+    margin:   0 10px;
+    color: var(--third-color);
+}
+
+.students h3{
+    font-size: var(--size-medium);
+}
+
+#student-display {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    width: fit-content;
+    margin: 20px auto;
+    min-width: 300px;
+}
+
+#student-display p {
+    font-size: var(--size-small);
+}
+
+
+#random-btn {
+    padding: 17px 40px;
+    border-radius: 10px;
+    border: 0;
+    letter-spacing: 1.5px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: #a1a1a1 0px 10px 0px 0px;
+    cursor: pointer;
+    font-weight: bold;
+    display: block;
+    margin: 40px auto;
+}
+
+
+#random-btn:active {
+    box-shadow: #404040 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 200ms;
+}
+
+#student-display {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
