@@ -11,7 +11,6 @@ const theList = document.querySelector(".student-list");
 const btn = document.querySelector("#random-btn");
 const display = document.querySelector("#student-display");
 
-
 let minorPeople = [];
 
 async function getMinorPeople() {
@@ -28,15 +27,17 @@ async function getMinorPeople() {
     if (theList) {
       theList.insertAdjacentHTML("beforeend", minorPersonHTML);
     }
+
+    if (minorPerson.fav_emoji === null) {
+      minorPerson.fav_emoji = "deze heeft geen emoji";
+    }
   });
 }
-
 
 // Button for the random student
 btn.addEventListener("click", () => {
   if (minorPeople.length > 0) {
-    let random =
-      minorPeople[Math.floor(Math.random() * minorPeople.length)];
+    let random = minorPeople[Math.floor(Math.random() * minorPeople.length)];
     display.innerHTML = `
             <h4>${random.name}</h4>
             <p>${random.fav_emoji}</p>`;
@@ -62,32 +63,26 @@ themeBtns.forEach((btn) => {
   });
 });
 
+/* ===============
+MY DATA PICTURE
+================*/
 
-/* ======================
-LOSSE API MIJN EIGEN NAAM
-=========================*/
+const titel = document.querySelector("h1");
 
- // naam uit de api halen en in de h1 zetten
-const titel = document.querySelector("h1")
-// selecteer de afbeelding met de class .avatar
-const deAvatar = document.querySelector(".avatar")
+const deAvatar = document.querySelector(".avatar");
 
-// functie aanroepen
-tekstInvoegen()
+tekstInvoegen();
 
-async function tekstInvoegen (){
-  // api url
-  const URL = "https://fdnd.directus.app/items/person/304"
-  // response opslaan in response variable
-  let response = await fetch(URL)
-  // de gegevens worden geladen als json en opgeslagen in de variable
-  let gegevensPersonen = await response.json()
+async function tekstInvoegen() {
+  const URL = "https://fdnd.directus.app/items/person/304";
 
-  console.log(gegevensPersonen.data.name)
-  
-  // veranderd de text content van de h1
-  titel.textContent = gegevensPersonen.data.name
-  
-  // veranderd de bron (src) van de afbeelding naar de avatar uit de API
-  deAvatar.src = gegevensPersonen.data.avatar
+  let response = await fetch(URL);
+
+  let gegevensPersonen = await response.json();
+
+  console.log(gegevensPersonen.data.name);
+
+  titel.textContent = gegevensPersonen.data.name;
+
+  deAvatar.src = gegevensPersonen.data.avatar;
 }
