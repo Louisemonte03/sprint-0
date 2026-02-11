@@ -1,99 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Louise Monte - Character Switcher</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-            <ul class="theme-switcher">
-                <div>
-            <li>
-                <button class="theme-btn" data-theme="light">☀️</button>
-            </li>
-            <li>
-                <button class="theme-btn" data-theme="dark"> 🌙 </button>
-            </li>
-            </div>
-            </ul>
-    <h1>Louise Monte</h1>
-    <p>Minor Web Design & Development 2026</p>
-    <div class="introduce">
-        <img src="images/louise-memoji.png" alt="">
-    <div class="introduce-elements">
-    <img src="images/hockey.svg" class="hockey-stick" alt="Hockey stick">
-  <img src="images/fiets.svg" class="bike" alt="Bike">
-  <img src="images/padel.svg" class="padel-racket" alt="Padel racket">
-  </div>
-    </div>
-</header>
-
-<main>
-    <section class="cards">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="theme-switcher">
+        <div>
+          <li>
+            <button class="theme-btn" data-theme="light">☀️</button>
+          </li>
+          <li>
+            <button class="theme-btn" data-theme="dark">🌙</button>
+          </li>
+        </div>
+      </ul>
+      <h1>Louise Monte</h1>
+      <p>Minor Web Design & Development 2026</p>
+      <div class="introduce">
+        <img src="images/louise-memoji.png" alt="Ik als een memoji" />
+        <div class="introduce-elements">
+          <img
+            src="images/hockey.svg"
+            class="hockey-stick"
+            alt="Hockey stick"
+          />
+          <img src="images/fiets.svg" class="bike" alt="Bike" />
+          <img src="images/padel.svg" class="padel-racket" alt="Padel racket" />
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="cards">
         <ul>
-            <li class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="images/baby.svg" alt="Baby">
-                        <p>Beginner</p>
-                    </div>
-                    <div class="card-back">
-                        <h2>Leerdoel 1</h2>
-                        <p>Scroll interface verbeteren</p>
-                    </div>
-                </div>
-            </li>
-            <li class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="images/kid.svg" alt="Kind">
-                        <p>Gevorderde beginner</p>
-                    </div>
-                    <div class="card-back">
-                        <h2>Leerdoel 2</h2>
-                        <p>Proces verbeteren</p>
-                    </div>
-                </div>
-            </li>
-            <li class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="images/grownup.svg" alt="Volwassen">
-                        <p>Competent</p>
-                    </div>
-                    <div class="card-back">
-                        <h2>Leerdoel 3</h2>
-                        <p>DOM-manipulatie & Event handling</p>
-                    </div>
-                </div>
-            </li>
-            <li class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="images/old.svg" alt="Oudere">
-                        <p>Expert Fase</p>
-                    </div>
-                    <div class="card-back">
-                        <h2>Leerdoel 4</h2>
-                        <p>Animatie & interactieve websites</p>
-                    </div>
-                </div>
-            </li>
+          <li class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="images/baby.svg" alt="Baby" />
+                <p>Beginner</p>
+              </div>
+              <div class="card-back">
+                <h2>Leerdoel 1</h2>
+                <p>Scroll interface verbeteren</p>
+              </div>
+            </div>
+          </li>
+          <li class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="images/kid.svg" alt="Kind" />
+                <p>Gevorderde beginner</p>
+              </div>
+              <div class="card-back">
+                <h2>Leerdoel 2</h2>
+                <p>Proces verbeteren</p>
+              </div>
+            </div>
+          </li>
+          <li class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="images/grownup.svg" alt="Volwassen" />
+                <p>Competent</p>
+              </div>
+              <div class="card-back">
+                <h2>Leerdoel 3</h2>
+                <p>DOM-manipulatie & Event handling</p>
+              </div>
+            </div>
+          </li>
+          <li class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="images/old.svg" alt="Oudere" />
+                <p>Expert Fase</p>
+              </div>
+              <div class="card-back">
+                <h2>Leerdoel 4</h2>
+                <p>Animatie & interactieve websites</p>
+              </div>
+            </div>
+          </li>
         </ul>
-    </section>
-</main>
-<footer>
-
-    <section class="students">
+      </section>
+    </main>
+    <footer>
+      <section class="students">
         <h3>Student Favorite Emoji</h3>
         <div id="student-display">
-            <p>Klik op de knop voor een random student!</p>
+          <p>Klik op de knop voor een random student!</p>
         </div>
         <button id="random-btn">Random student</button>
-    </section>
-</footer>
+      </section>
+    </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
