@@ -73,5 +73,27 @@ Ondanks dat ik een groot deel van de week ziek was, heb ik een duidelijk concept
 - **Hoe lang duurde het ?** Hele schooldag
 - **Wat heb ik geleerd?** DOM-manipulatie het tonen van API-data in een specifiek element
 
-### **Week 1 voortgang**
+### **Week 2 voortgang**
 Deze week stond in het teken van de grote "pivot". Nadat ik op maandag na urenlang experimenteren concludeerde dat de scroll-swiper te complex was voor de huidige opzet, ben ik overgestapt naar een robuuster design met Flip Cards. Dit bleek een slimme keuze: ik heb succesvol een Dark/Light mode geïmplementeerd en mijn technische vaardigheden uitgebreid met CSS Custom Properties. Daarnaast heb ik de Spotify API-zoektocht vervangen door een goed werkende Student Emoji API, waardoor ik mijn leerdoel voor DOM-manipulatie en het werken met externe data alsnog heb behaald. De website is nu een persoonlijk en technisch verzorgd geheel.
+
+## **Bronnen lijst**
+
+### **Beeldmateriaal**
+
+Baby illustratie: Freepik. (z.d.). Flat pack babies with round faces [Vectorillustratie]. Geraadpleegd op 11 februari 2026, van https://www.freepik.com/free-vector/flat-pack-babies-with-round-faces_1013717.htm
+
+Volwassen illustratie: Freepik. (z.d.). Flat hand drawn black girl in different poses [Vectorillustratie]. Geraadpleegd op 11 februari 2026, van https://www.freepik.com/free-vector/flat-hand-drawn-black-girl-different-poses_12428947.htm
+
+Oma illustratie: Freepik. (z.d.). Black women collection different ages [Vectorillustratie]. Geraadpleegd op 11 februari 2026, van https://www.freepik.com/free-vector/black-women-collection-different-ages_2555507.htm
+
+Sport icons: Freepik. (z.d.). Padel tennis sport & Field hockey design logo [Vectorillustraties]. Geraadpleegd op 11 februari 2026, van https://www.freepik.com
+
+### **Software & Code**
+
+Coding2GO. (2024, 28 juli). Create a Dark Mode Switch with HTML, CSS, JavaScript [Video]. YouTube. https://www.youtube.com/watch?v=_gKEUYarehE
+
+Refert, J. [xplodivity]. (2023, 27 februari). CSS 3D Flip Card Effect [Video]. YouTube. https://www.youtube.com/watch?v=IZIMGn1Usrw
+
+W3Schools. (z.d.). How TO - Flip a Card. Geraadpleegd op 11 februari 2026, van https://www.w3schools.com/howto/howto_css_flip_card.asp
+
+Uiverse. (z.d.). Community-built UI elements (buttons & cards). Geraadpleegd op 11 februari 2026, van https://uiverse.io
