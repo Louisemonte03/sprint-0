@@ -29,7 +29,7 @@ async function getMinorPeople() {
     }
 
     if (minorPerson.fav_emoji === null) {
-      minorPerson.fav_emoji = "deze heeft geen emoji";
+      minorPerson.fav_emoji = "this one has no emoji";
     }
   });
 }
@@ -67,22 +67,22 @@ themeBtns.forEach((btn) => {
 MY DATA PICTURE
 ================*/
 
-const titel = document.querySelector("h1");
+const title = document.querySelector("h1");
 
-const deAvatar = document.querySelector(".avatar");
+const theAvatar = document.querySelector(".avatar");
 
-tekstInvoegen();
+insertText();
 
-async function tekstInvoegen() {
+async function insertText() {
   const URL = "https://fdnd.directus.app/items/person/304";
 
   let response = await fetch(URL);
 
-  let gegevensPersonen = await response.json();
+  let personData = await response.json();
 
-  console.log(gegevensPersonen.data.name);
+  console.log(personData.data.name);
 
-  titel.textContent = gegevensPersonen.data.name;
+  title.textContent = personData.data.name;
 
-  deAvatar.src = gegevensPersonen.data.avatar;
+  theAvatar.src = personData.data.avatar;
 }
