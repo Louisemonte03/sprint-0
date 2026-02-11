@@ -109,7 +109,7 @@ header img:nth-of-type(1) {
 INTRODUCE WHO AM I
 ================== */
 
-.introduce img {
+.intro img {
   animation: float 3s ease-in-out infinite;
 }
 
@@ -125,7 +125,7 @@ INTRODUCE WHO AM I
   }
 }
 
-.introduce-elements img {
+.intro-elements img {
   opacity: 0;
   transform: translateY(20px);
   transition:
@@ -133,33 +133,33 @@ INTRODUCE WHO AM I
     transform 0.5s ease;
 }
 
-.introduce-elements {
+.intro-elements {
   display: flex;
   gap: 50px;
 }
 
-.introduce:hover .introduce-elements img {
+.intro:hover .intro-elements img {
   opacity: 1;
   transform: translateY(0);
 }
 
-.introduce:hover .hockey {
+.intro:hover .hockey-stick {
   transition-delay: 0.1s;
 }
-.introduce:hover .bike {
+.intro:hover .bike {
   transition-delay: 0.3s;
 }
-.introduce:hover .padel-racket {
+.intro:hover .padel-racket {
   transition-delay: 0.5s;
 }
 
 @media (max-width: 768px) {
-  .introduce-elements {
+  .intro-elements {
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
-  .introduce-elements img {
+  .intro-elements img {
     width: 200px;
   }
 }
@@ -203,7 +203,6 @@ LEARNING OBJECTS
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  /* ik weet niet wat dit doet */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
