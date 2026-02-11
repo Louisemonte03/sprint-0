@@ -29,7 +29,7 @@ async function getMinorPeople() {
     }
 
     if (minorPerson.fav_emoji === null) {
-      minorPerson.fav_emoji = "this one has no emoji";
+      minorPerson.fav_emoji = "This one has no emoji";
     }
   });
 }
