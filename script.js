@@ -1,4 +1,6 @@
-// Copy we used earlier
+/* ==========
+API STUDENTS
+=============*/
 
 let base = "https://fdnd.directus.app/items";
 let endpoint =
@@ -8,6 +10,7 @@ let url = base + endpoint;
 const theList = document.querySelector(".student-list");
 const btn = document.querySelector("#random-btn");
 const display = document.querySelector("#student-display");
+
 
 let minorPeople = [];
 
@@ -28,6 +31,7 @@ async function getMinorPeople() {
   });
 }
 
+
 // Button for the random student
 btn.addEventListener("click", () => {
   if (minorPeople.length > 0) {
@@ -41,20 +45,49 @@ btn.addEventListener("click", () => {
 
 getMinorPeople();
 
-// Light/dark mode section
+/* ==============
+LIGHT DARK MODE
+===============*/
 const themeBtns = document.querySelectorAll(".theme-btn");
 
 themeBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const theme = btn.getAttribute("data-theme");
 
-    // Reset classes
-    document.body.classList.remove("dark-mode", "orange-mode");
+    document.body.classList.remove("dark-mode");
 
     if (theme === "dark") {
       document.body.classList.add("dark-mode");
-    } else if (theme === "orange") {
-      document.body.classList.add("orange-mode");
     }
   });
 });
+
+
+/* ======================
+LOSSE API MIJN EIGEN NAAM
+=========================*/
+
+ // naam uit de api halen en in de h1 zetten
+const titel = document.querySelector("h1")
+// selecteer de afbeelding met de class .avatar
+const deAvatar = document.querySelector(".avatar")
+
+// functie aanroepen
+tekstInvoegen()
+
+async function tekstInvoegen (){
+  // api url
+  const URL = "https://fdnd.directus.app/items/person/304"
+  // response opslaan in response variable
+  let response = await fetch(URL)
+  // de gegevens worden geladen als json en opgeslagen in de variable
+  let gegevensPersonen = await response.json()
+
+  console.log(gegevensPersonen.data.name)
+  
+  // veranderd de text content van de h1
+  titel.textContent = gegevensPersonen.data.name
+  
+  // veranderd de bron (src) van de afbeelding naar de avatar uit de API
+  deAvatar.src = gegevensPersonen.data.avatar
+}

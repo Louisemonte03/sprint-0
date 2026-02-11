@@ -103,6 +103,7 @@ header p {
 
 header img:nth-of-type(1) {
   margin-top: 50px;
+  border-radius: 100%;
 }
 
 /* ===============
@@ -132,6 +133,9 @@ INTRODUCE WHO AM I
     opacity 0.5s ease,
     transform 0.5s ease;
 }
+
+
+
 
 .intro-elements {
   display: flex;
