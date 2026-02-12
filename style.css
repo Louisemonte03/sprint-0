@@ -214,7 +214,7 @@ LEARNING OBJECTS
   text-align: center;
 }
 
-.card-front p:nth-of-type(2){
+.card-front p:nth-of-type(2) {
   color: rgb(173, 173, 173);
   font-size: 10px;
 }
