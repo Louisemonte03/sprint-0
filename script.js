@@ -68,7 +68,6 @@ MY DATA PICTURE
 ================*/
 
 const title = document.querySelector("h1");
-
 const theAvatar = document.querySelector(".avatar");
 
 insertText();
