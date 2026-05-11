@@ -1,87 +1,57 @@
-/* ==========
-API STUDENTS
-=============*/
+/* ======================
+   FLIP CARDS — klik-support voor mobiel
+========================= */
 
-let base = "https://fdnd.directus.app/items";
-let endpoint =
-  "/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&sort=name&filter[fav_tag][_nempty]";
-let url = base + endpoint;
+document.querySelectorAll(".card").forEach((card) => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("flipped");
+  });
+});
 
-const theList = document.querySelector(".student-list");
+/* ======================
+   RANDOM MEDESTUDENT
+   Bron: https://fdnd.directus.app
+========================= */
+
 const btn = document.querySelector("#random-btn");
 const display = document.querySelector("#student-display");
 
 let minorPeople = [];
 
-async function getMinorPeople() {
-  let response = await fetch(url);
-  let responseJSON = await response.json();
-  minorPeople = responseJSON.data;
+async function loadMinorPeople() {
+  const base = "https://fdnd.directus.app/items";
+  const endpoint =
+    "/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&filter[avatar][_nempty]=true&sort=name&fields=name,avatar,fav_emoji";
+  const response = await fetch(base + endpoint);
+  const data = await response.json();
 
-  minorPeople.forEach((minorPerson) => {
-    let minorPersonHTML = `
-            <li class="student-card">
-                <h4>${minorPerson.name}</h4>
-                <p><strong>${minorPerson.fav_emoji}</strong></p>
-            </li>`;
-    if (theList) {
-      theList.insertAdjacentHTML("beforeend", minorPersonHTML);
-    }
-
-    if (minorPerson.fav_emoji === null) {
-      minorPerson.fav_emoji = "This one has no emoji";
-    }
-  });
+  minorPeople = data.data.map((person) => ({
+    name: person.name,
+    avatar: person.avatar ?? null,
+    emoji: person.fav_emoji ?? "❓",
+  }));
 }
 
-// Button for the random student
-btn.addEventListener("click", () => {
-  if (minorPeople.length > 0) {
-    let random = minorPeople[Math.floor(Math.random() * minorPeople.length)];
-    display.innerHTML = `
-            <h4>${random.name}</h4>
-            <p>${random.fav_emoji}</p>`;
-  }
-});
+loadMinorPeople();
 
-getMinorPeople();
 
-/* ==============
-LIGHT DARK MODE
-===============*/
-const themeBtns = document.querySelectorAll(".theme-btn");
-
-themeBtns.forEach((btn) => {
+if (btn) {
   btn.addEventListener("click", () => {
-    const theme = btn.getAttribute("data-theme");
+    if (minorPeople.length === 0) return;
 
-    document.body.classList.remove("dark-mode");
+    const random = minorPeople[Math.floor(Math.random() * minorPeople.length)];
+    const imgSrc = random.avatar
+      ? random.avatar.startsWith("http")
+        ? random.avatar
+        : `https://fdnd.directus.app/assets/${random.avatar}?width=120&height=120&fit=cover`
+      : null;
 
-    if (theme === "dark") {
-      document.body.classList.add("dark-mode");
-    }
+    display.innerHTML = `
+      <div class="mini-card">
+        ${imgSrc ? `<img class="mini-avatar" src="${imgSrc}" alt="Foto van ${random.name}" />` : `<span style="font-size:3rem">🐒</span>`}
+        <p class="mini-name">${random.name}</p>
+        <p class="mini-club">Minor Web Dev</p>
+      </div>
+    `;
   });
-});
-
-/* ===============
-MY DATA PICTURE
-================*/
-
-const title = document.querySelector("h1");
-const theAvatar = document.querySelector(".avatar");
-
-insertText();
-
-async function insertText() {
-  const URL = "https://fdnd.directus.app/items/person/304";
-
-  let response = await fetch(URL);
-
-  let personData = await response.json();
-
-  console.log(personData.data.name);
-
-  title.textContent = personData.data.name;
-
-  theAvatar.src = personData.data.avatar;
 }

@@ -1,107 +1,116 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Louise Monte</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <ul class="theme-switcher">
-        <div>
-          <li>
-            <button class="theme-btn" data-theme="light">☀️</button>
-          </li>
-          <li>
-            <button class="theme-btn" data-theme="dark">🌙</button>
-          </li>
-        </div>
-      </ul>
-      <h1>Louise Monte</h1>
-      <p>Minor Web Design & Development 2026</p>
-      <div class="intro">
-        <img class="avatar" alt="Profielfoto" />
-        <div class="intro-elements">
-          <img
-            src="images/hockey.svg"
-            class="hockey-stick"
-            alt="Hockey stick"
-          />
-          <img src="images/bike.svg" class="bike" alt="Bike" />
-          <img src="images/padel.svg" class="padel-racket" alt="Padel racket" />
-        </div>
-        <p>Images designed by Freepik</p>
-      </div>
+    <header class="hero">
+      <img src="images/me.jpg" alt="Foto van Louise" class="profielfoto" />
+      <h1 class="big-name">Louise Monte</h1>
+      <p class="tagline">Minor Web Design & Development 2026</p>
     </header>
+
     <main>
+      <section class="concept-intro">
+        <h2>Drie sporten, drie doelen</h2>
+        <p>
+          Mijn drie hobbies vormen de rode draad van deze website. Elke sport is
+          gekoppeld aan een leerdoel voor de minor.
+        </p>
+      </section>
+
       <section class="cards">
         <ul>
           <li class="card">
-            <div class="card-inner">
-              <div class="card-front">
-                <img src="images/baby.svg" alt="Baby" />
-                <p>Beginner</p>
-                <p>Designed by Freepik</p>
+            <div class="card-binnen">
+              <div class="card-voor">
+                <span class="sport-icoon">🏑</span>
+                <h2>Hockey</h2>
+                <p class="leerdoel">Leerdoel 1</p>
               </div>
-              <div class="card-back">
-                <h2>Learning Goal 1</h2>
-                <p>Improve scroll interface</p>
-                <p>Designed by Freepik</p>
-              </div>
-            </div>
-          </li>
-          <li class="card">
-            <div class="card-inner">
-              <div class="card-front">
-                <img src="images/kid.svg" alt="Kid" />
-                <p>Advanced Beginner</p>
-                <p>Designed by Freepik</p>
-              </div>
-              <div class="card-back">
-                <h2>Learning Goal 2</h2>
-                <p>Improve process</p>
+              <div class="card-achter">
+                <h2>Werken met API's</h2>
+                <p class="wat">
+                  <strong>Wat:</strong> Externe data ophalen via een API en
+                  dynamisch tonen op een pagina.
+                </p>
+                <p class="waarom">
+                  <strong>Waarom:</strong> Ik wil mijn websites niet statisch
+                  maken. Door API's te begrijpen kan ik live data tonen en echte
+                  gebruikerservaringen bouwen.
+                </p>
               </div>
             </div>
           </li>
+
           <li class="card">
-            <div class="card-inner">
-              <div class="card-front">
-                <img src="images/grownup.svg" alt="Adult" />
-                <p>Competent</p>
-                <p>Designed by Freepik</p>
+            <div class="card-binnen">
+              <div class="card-voor">
+                <span class="sport-icoon">🚴</span>
+                <h2>Wielrennen</h2>
+                <p class="leerdoel">Leerdoel 2</p>
               </div>
-              <div class="card-back">
-                <h2>Learning Goal 3</h2>
-                <p>DOM-manipulation & Event handling</p>
+              <div class="card-achter">
+                <h2>CSS Animaties &amp; Scroll</h2>
+                <p class="wat">
+                  <strong>Wat:</strong> Scroll-driven animations en CSS
+                  keyframes leren bouwen.
+                </p>
+                <p class="waarom">
+                  <strong>Waarom:</strong> Ik wil de gebruiker een natuurlijke
+                  aestetische beweging laten ervaren met de scoll functie.
+                </p>
               </div>
             </div>
           </li>
+
           <li class="card">
-            <div class="card-inner">
-              <div class="card-front">
-                <img src="images/old.svg" alt="Elderly" />
-                <p>Expert Phase</p>
-                <p>Designed by Freepik</p>
+            <div class="card-binnen">
+              <div class="card-voor">
+                <span class="sport-icoon">🏸</span>
+                <h2>Padel</h2>
+                <p class="leerdoel">Leerdoel 3</p>
               </div>
-              <div class="card-back">
-                <h2>Learning Goal 4</h2>
-                <p>Animation & interactive websites</p>
+              <div class="card-achter">
+                <h2>Esthetisch en clean design</h2>
+                <p class="wat">
+                  <strong>Wat:</strong> Interfaces bouwen die er verzorgd en
+                  rustig uitzien met goede typografie, witruimte en een goed
+                  visuele balans.
+                </p>
+                <p class="waarom">
+                  <strong>Waarom:</strong> Ik wil dat mijn websites er niet
+                  rommelig uitzien. Een clean design trekt aandacht op de juiste
+                  manier en voelt prettig aan voor de gebruiker.
+                </p>
               </div>
             </div>
           </li>
         </ul>
       </section>
-    </main>
-    <footer>
-      <section class="students">
-        <h3>Student Favorite Emoji</h3>
+
+      <section class="studenten">
+        <h2>Mijn team in de minor</h2>
+        <p class="studenten-intro">
+          Sporten doe je samen. Ook in deze minor kan je samen werken. Zoek voor
+          een willekeurige student om mee samen te werken.
+        </p>
         <div id="student-display">
-          <p>Click the button for a random student!</p>
+          <p>Druk op de knop voor een medestudent!</p>
         </div>
-        <button id="random-btn">Random student</button>
+        <button id="random-btn">Willekeurige teamgenoot</button>
       </section>
-    </footer>
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>
